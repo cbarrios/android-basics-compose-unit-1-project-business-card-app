@@ -6,9 +6,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Email
+import androidx.compose.material.icons.rounded.Phone
+import androidx.compose.material.icons.rounded.Share
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -37,7 +42,14 @@ fun MyApp() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colors.background
         ) {
-            ProfileInfo()
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.SpaceEvenly
+            ) {
+                ProfileInfo()
+                ContactInfo()
+            }
+
         }
     }
 }
@@ -50,7 +62,7 @@ fun ProfileInfo() {
     ) {
         Image(
             painter = painterResource(id = R.drawable.android_logo),
-            contentDescription = null,
+            contentDescription = stringResource(R.string.android_logo),
             modifier = Modifier
                 .width(80.dp)
                 .height(80.dp)
@@ -67,6 +79,41 @@ fun ProfileInfo() {
             color = MaterialTheme.colors.secondary
 
         )
+    }
+}
+
+@Composable
+fun ContactInfo() {
+    Column {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Icon(
+                imageVector = Icons.Rounded.Phone,
+                contentDescription = stringResource(R.string.phone),
+                tint = MaterialTheme.colors.secondary
+            )
+            Spacer(Modifier.width(16.dp))
+            Text(text = stringResource(R.string.phone_contact), fontSize = 14.sp)
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Icon(
+                imageVector = Icons.Rounded.Share,
+                contentDescription = stringResource(R.string.share),
+                tint = MaterialTheme.colors.secondary
+            )
+            Spacer(Modifier.width(16.dp))
+            Text(text = stringResource(R.string.share_contact), fontSize = 14.sp)
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Icon(
+                imageVector = Icons.Rounded.Email,
+                contentDescription = stringResource(R.string.email),
+                tint = MaterialTheme.colors.secondary
+            )
+            Spacer(Modifier.width(16.dp))
+            Text(text = stringResource(R.string.email_contact), fontSize = 14.sp)
+        }
     }
 }
 

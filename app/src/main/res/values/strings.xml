@@ -2,4 +2,11 @@
     <string name="app_name">Business Card</string>
     <string name="profile_name">Carlos Barrios</string>
     <string name="profile_title">Android Developer Extraordinaire</string>
+    <string name="phone_contact">+1 (123) 456–7899</string>
+    <string name="share_contact">\@AndroidDev</string>
+    <string name="email_contact">carlos.barrios@android.com</string>
+    <string name="phone">Phone</string>
+    <string name="share">Share</string>
+    <string name="email">Email</string>
+    <string name="android_logo">Android logo</string>
 </resources>
